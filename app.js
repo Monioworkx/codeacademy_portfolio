@@ -2,6 +2,7 @@ const state = {
     currentSection: null,
 }
 
+/* Main menu buttons scroll to section */
 
 const scrollToAbout = () => {
     const aboutAnchor = document.getElementById('aboutAnchor');
@@ -21,13 +22,31 @@ const scrollToProject = () => {
     });
 }
 
+const scrollToTechnologies = () => {
+    const technologieAnchor = document.getElementById('technologiesAnchor');
+    const technologieCard = document.querySelector('.learning');
+    
+    technologieCard.addEventListener('click', ()=> {
+        technologieAnchor.scrollIntoView();
+    });
+}
+
+const scrollToContact = () => {
+    const contactAnchor = document.getElementById('contactAnchor');
+    const contactCard = document.querySelector('.contact');
+    
+    contactCard.addEventListener('click', ()=> {
+        contactAnchor.scrollIntoView();
+    });
+}
+
 /* Intersection observer sections */
 
 const jsSections = document.querySelectorAll('.js-section');
 
 const options = {
     root: null,
-    threshold: 0,
+    threshold: 0.4,
     rootMargin: "-150px",
 };
 
@@ -58,9 +77,25 @@ const observer = new IntersectionObserver(function(entries, observer) {
             const sectionInView = state.currentSection;
             const nextSectionIndex = jsSectionsArray.indexOf(sectionInView) + 1;
             const goToNextSection = document.querySelector(`.${(jsSectionsArray[nextSectionIndex].classList)[0]}`);
-            
+            console.log(goToNextSection);
             goToNextSection.scrollIntoView();
         });
+
+        const sectionInView = state.currentSection;              
+       
+
+
+        const arrowBtns = document.querySelectorAll('.arrow-btn');
+        const navBar = document.querySelector('.nav-bar');  
+
+        if (sectionInView === jsSections[2]) { 
+            navBar.classList.add('nav-bar-dark');
+            arrowBtns.forEach(btn => btn.classList.add('arrow-btn-dark'));
+        } else { 
+            navBar.classList.remove('nav-bar-dark');
+            arrowBtns.forEach(btn => btn.classList.remove('arrow-btn-dark'));
+        }
+        
     })
 }, options);
 
@@ -70,6 +105,10 @@ jsSections.forEach(section => {
 
 
 
+
+
 scrollToAbout();
 scrollToProject();
-/* upPagination(); */
+scrollToTechnologies();
+scrollToContact();
+

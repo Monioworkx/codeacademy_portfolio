@@ -43,6 +43,8 @@ h3 {
                          "main main main main"
                          "aboutsect aboutsect aboutsect aboutsect"
                          "projectsect projectsect projectsect projectsect"
+                         "techsect techsect techsect techsect"
+                         "contactsect contactsect contactsect contactsect"
                          "footer footer footer footer";
     align-items: center;
     justify-content:stretch;
@@ -70,23 +72,30 @@ header {
     justify-content: space-around;
     position: relative;
     background-size: 100%;
-    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.2); 
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.2);     
     
 }
 
+
 .nav-bar::before {
-    content: "";
-    background-image:  url("../images/nav2.jpg");
+    content: "";    
+    background: url("../images/nav2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    position: absolute;
+    position: absolute;    
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
     opacity: 0.9;
 }
-
+.nav-bar-dark::before {
+    background: #222;
+    
+}
+.nav-bar-dark .dropbtn {
+    color: #fff;
+}
 .nav-links {    
     display: flex;
     align-items: center;
@@ -195,6 +204,7 @@ main {
     width: auto;
     height: 30vh;
     color: rgb(27, 27, 27);
+    border-right: #222 solid 0.5px;
 }
 
 .projects {
@@ -206,6 +216,7 @@ main {
     width: 100%;
     height: 30vh;
     color: rgb(27, 27, 27);
+    border-right: #222 solid 0.5px;
 }
 
 .learning {
@@ -217,6 +228,7 @@ main {
     width: 100%;
     height: 30vh;
     color: rgb(27, 27, 27);
+    border-right: #222 solid 0.5px;
 }
 
 .contact {
@@ -228,6 +240,7 @@ main {
     width: 100%;
     height: 30vh;
     color: rgb(27, 27, 27);
+    
 }
 
 .separator {
@@ -248,8 +261,8 @@ main {
 .section {
     text-align: center;
     align-items: center;
-    justify-content: center;    
-    border-right: #222 solid 0.5px;
+    justify-content: center;  
+    
     -webkit-transition: background 200ms, color 300ms, font-size 300ms;
         transition: background 200ms, color 300ms, font-size 300ms;
 }
@@ -343,39 +356,6 @@ footer {
     font-size: 16px;
     margin-left: 128px;
 }
-.down-btn {
-    font-size: 5rem;
-    color:#fff;
-    text-decoration: none;
-    position:fixed;
-    bottom: 0;
-    padding-bottom: 8px;
-    left: 50%;
-    
-    -webkit-transition: padding-bottom 200ms;
-    transition: padding-bottom 200ms;
-}
-.down-btn:hover {
-    cursor: pointer;
-    text-shadow: 0px 0px 8px rgba(128, 128, 128, 0.507);
-    padding-bottom: 0px;
-}
-.up-btn {
-    font-size: 5rem;
-    color:#fff;
-    text-decoration: none;
-    position:fixed;
-    top: 0;
-    padding-top: 80px;
-    left: 50%;    
-    -webkit-transition: padding-top 200ms;
-    transition: padding-top 200ms;
-}
-.up-btn:hover {
-    cursor: pointer;
-    text-shadow: 0px 0px 8px rgba(128, 128, 128, 0.753);
-    padding-top: 72px;
-}
 
 /* Projects section */
 
@@ -433,4 +413,210 @@ footer {
     box-shadow: 0px 8px 16px 0px rgba(105, 105, 105, 0.418);    
     font-size: 16px;
     margin-left: 128px;
+}
+
+/* Technologies Section */
+
+.technologies-section {
+    grid-area: techsect;
+    width: 100%;
+    height: 100vh;
+    /* background-image: url("../images/about1.jfif"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgb(10, 10, 10);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.technologies-inner-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;    
+    color: #fff;
+}
+.technologies-inner-section h2 {
+    font-size: 4rem;
+    margin: 32px;
+    text-align: center;
+    color: #fff;
+}
+.technologies-inner-section p {
+    /*     background: rgba(143, 142, 142, 0.452);
+        box-shadow: 0 8px 32px 0 rgba(139, 139, 139, 0.37);
+        backdrop-filter: blur( 7px );
+        -webkit-backdrop-filter: blur( 30px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        margin: 40px;
+        width: 50vw;
+        height: 35vh; */
+        color: #FFF;
+        padding: 128px;
+        /* color: #fff; */
+}
+.technologies-p-container {    
+    background-color: black;
+    background-image: url("../images/section3.jfif");    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;    
+    border-radius: 100%;
+    object-fit: cover;
+    overflow: scroll;
+    width: 384px;
+    height: 384px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 8px 16px 0px rgba(105, 105, 105, 0.418);    
+    font-size: 16px;
+    margin-left: 128px;
+}
+.technologies-p-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Contact Section */
+
+.contact-section {
+    grid-area: contactsect;
+    width: 100%;
+    height: 100vh;
+    /* background-image: url("../images/about1.jfif"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #fff;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contact-inner-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+    color: #222;
+}
+.contact-inner-section h2 {
+    font-size: 8rem;
+    margin: 32px;
+    text-align: center;
+    color: #222;
+    margin-bottom: none;
+}
+.contact-inner-section h2:hover {
+    cursor: pointer;
+}
+
+.underline-animation {
+    text-decoration: none;
+    color: #222;
+    position: relative;
+}
+.underline-animation::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 300ms ease-in;
+
+}
+.underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* .contact-inner-section h2:hover {
+    cursor: pointer;
+    font-size: 10rem;    
+    text-shadow: 4px 4px 4px rgba(128, 128, 128, 0.7);
+} */
+/* .contact-inner-section p {
+        background: rgba(143, 142, 142, 0.452);
+        box-shadow: 0 8px 32px 0 rgba(139, 139, 139, 0.37);
+        backdrop-filter: blur( 7px );
+        -webkit-backdrop-filter: blur( 30px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        margin: 40px;
+        width: 50vw;
+        height: 35vh; 
+        color: #FFF;
+        padding: 128px;
+        color: #fff;
+} */
+/* .contact-p-container {    
+    background-color: black;
+    background-image: url("../images/section3.jfif");    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;    
+    border-radius: 100%;
+    object-fit: cover;
+    overflow: scroll;
+    width: 384px;
+    height: 384px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 8px 16px 0px rgba(105, 105, 105, 0.418);    
+    font-size: 16px;
+    margin-left: 128px;
+} */
+
+
+/*  Pagination buttons */
+
+.down-btn {
+    font-size: 5rem;
+    color:#fff;
+    text-decoration: none;
+    position:fixed;
+    bottom: 0;
+    padding-bottom: 8px;
+    left: 50%;
+    
+    -webkit-transition: padding-bottom 200ms;
+    transition: padding-bottom 200ms;
+}
+.down-btn:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 8px rgba(128, 128, 128, 0.507);
+    padding-bottom: 0px;
+}
+.up-btn {
+    font-size: 5rem;
+    color:#fff;
+    text-decoration: none;
+    position:fixed;
+    top: 0;
+    padding-top: 80px;
+    left: 50%;    
+    -webkit-transition: padding-top 200ms;
+    transition: padding-top 200ms;
+}
+.up-btn:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 8px rgba(128, 128, 128, 0.753);
+    padding-top: 72px;
+}
+
+.arrow-btn-dark {
+    color:#222;
+    text-shadow: 0px 0px 8px rgba(128, 128, 128, 0.8);
 }
