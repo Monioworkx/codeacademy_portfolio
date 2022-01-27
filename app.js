@@ -46,8 +46,20 @@ const observer = new IntersectionObserver(function(entries, observer) {
             const sectionInView = state.currentSection;
             const previousSectionIndex = jsSectionsArray.indexOf(sectionInView) - 1;
             const goToPreviousSection = document.querySelector(`.${(jsSectionsArray[previousSectionIndex].classList)[0]}`);
-            console.log(goToPreviousSection);
+            
             goToPreviousSection.scrollIntoView();
+        });
+
+        const downButton = document.querySelector('.down-btn');
+        downButton.addEventListener('click', () => {
+            const jsSectionsArray = entries.map((ent) => {
+                return ent.target;
+            });
+            const sectionInView = state.currentSection;
+            const nextSectionIndex = jsSectionsArray.indexOf(sectionInView) + 1;
+            const goToNextSection = document.querySelector(`.${(jsSectionsArray[nextSectionIndex].classList)[0]}`);
+            
+            goToNextSection.scrollIntoView();
         });
     })
 }, options);
