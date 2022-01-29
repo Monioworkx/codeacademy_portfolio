@@ -105,7 +105,28 @@ jsSections.forEach(section => {
 
 
 
+/* card animation */
 
+const jsCard = document.querySelector(".js-card");
+const backText = document.querySelector(".back");
+const rotateCardJs = () => {   
+    jsCard.classList.toggle('rotate');
+    
+    if(backText.style.overflow != 'visible') {
+        backText.style.overflow = 'visible';
+    } else {
+        backText.style.overflow = 'hidden';
+    }
+}
+
+jsCard.addEventListener('click', rotateCardJs);
+
+const htmlCard = document.querySelector(".html-card");
+const rotateCardHtml = () => {   
+    htmlCard.classList.toggle('rotate');    
+} 
+
+htmlCard.addEventListener('click', rotateCardHtml);
 
 scrollToAbout();
 scrollToProject();
